@@ -21,4 +21,4 @@ I would like to explore the **cyclic nature of life** through the dynamic growth
 The project reflects some of the conceptual ideas from **Yoko Ono’s "Grapefruit"**, focusing on minimalist visual storytelling and the passage of time.
 
 ![alt text](<sketch.png>)
-![alt text](treeoflifeposter-1.jpg)
+![alt text](treeoflifeposter.jpg)
