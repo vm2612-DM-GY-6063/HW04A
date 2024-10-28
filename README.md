@@ -47,8 +47,6 @@ This week, I began developing an interactive and time-based poster inspired by t
 - **fall()**: Part of the Leaf class, controlling the falling behavior of leaves in Autumn, giving the impression of seasonal decay.
 - **displayQuote()**: Displays a quote from the movie in Winter to enhance the reflective atmosphere.
 
-With this structure, the project reflects **The Tree of Life’s** themes of growth, change, and cosmic connection through both **interaction** and **time-based events**.
-
 
 ### 1. What book, album or movie did you choose? What is it about?
 
