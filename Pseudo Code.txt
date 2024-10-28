@@ -1,0 +1,73 @@
+Initialize canvas and set up slider for branch angle
+
+Setup():
+    - Create canvas and initialize slider for branch angle (0 to TWO_PI)
+    - Initialize season variables and set duration for seasonal change (10 seconds)
+    - Create arrays for leaves and stars
+    - Populate arrays:
+        - Create multiple Star objects with random positions
+        - Create empty Leaf array to be filled during spring and summer seasons
+
+Draw():
+    - Clear background
+    - Calculate current season based on elapsed time using modulus on millis() function
+    - Set background color based on season:
+        - Spring: light blue
+        - Summer: green
+        - Fall: orange
+        - Winter: gray
+
+    - Draw stars
+        - For each star in stars array, call twinkle() method to adjust brightness
+    
+    - Check slider value to update branch angle
+    - Draw the tree
+        - Translate to canvas bottom center
+        - Call branch() method with initial length (100), recursively generating branches with the current slider angle
+
+    - Handle leaves based on season:
+        - If season is Spring or Summer:
+            - Add leaves to tree (grow new leaves)
+            - For each leaf, call display() method to render on canvas
+        - If season is Fall:
+            - For each leaf, call fall() method to make leaves fall downwards
+            - Render leaves with display()
+        - If season is Winter:
+            - Remove leaves from tree (bare branches)
+            - Display reflective quote on canvas
+
+Classes:
+    - Tree Class:
+        - Constructor: Define position, angle, branch length, and branching depth
+        - branch(len): Recursive function that draws branches based on length and slider angle
+            - If length > threshold, draw line representing branch
+            - Call branch() recursively to draw child branches with updated angles
+
+    - Leaf Class:
+        - Constructor: Initialize position and falling speed
+        - fall(): Increase leaf’s Y position by falling speed (simulate falling)
+        - display(): Render leaf as ellipse with specific color (green in spring/summer, red/orange in fall)
+
+    - Star Class:
+        - Constructor: Set random position and size for twinkling effect
+        - twinkle(): Randomly change brightness of star each frame
+
+Functions:
+    - changeSeason():
+        - Calculate season based on time using modulus of millis()
+        - Update background color and set leaf behaviors based on current season
+
+    - displayQuote():
+        - Render a reflective quote in the center of the canvas during winter season
+
+Interactivity:
+    - Slider Control:
+        - Update branch angle based on slider value
+        - Adjust tree growth pattern interactively in real-time
+
+Time-Based Logic:
+    - Calculate elapsed time for seasonal changes every 10 seconds:
+        - Spring: Tree blooms, leaves grow
+        - Summer: Full foliage
+        - Fall: Leaves fall from tree
+        - Winter: Bare tree with quote displayed
