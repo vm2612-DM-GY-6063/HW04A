@@ -6,7 +6,7 @@ let branchRandomness = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  slider = createSlider(PI, TWO_PI, PI/2, 0.1);
+  slider = createSlider(PI, TWO_PI, PI/8, 0.1);
 
   for (let s = 0; s < 200; s++) {
     stars.push({
