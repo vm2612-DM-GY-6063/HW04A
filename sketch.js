@@ -3,16 +3,14 @@ let i = 100;
 let angle = 0.1;
 let branchRandomness = [];
 let seasonIndex = 0;
-let seasonChangeInterval = 200; // Change season every 10 seconds (600 frames at 60 FPS)
+let seasonChangeInterval = 200;
 let leafCount = 0;
-
-// Seasons array will be defined in setup to use p5 color() function
 let seasons;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  slider = createSlider(PI, TWO_PI, PI / 8, 0.5); // Set a more constrained slider range for angle
-  slider.position(width / 2 - slider.width / 2, 20); // Centered at the top
+  slider = createSlider(PI, TWO_PI, PI / 8, 0.5);
+  slider.position(width / 2 - slider.width / 2, 20);
 
   for (let s = 0; s < 200; s++) {
     stars.push({
@@ -25,32 +23,31 @@ function setup() {
 
   generateBranchRandomness(10);
 
-  // Define colors for each season using color() inside setup
   seasons = [
-    { // Spring
-      backgroundStart: color(135, 206, 235), // Light blue sky
-      backgroundEnd: color(34, 139, 34), // Forest green
-      leafColors: [color(60, 179, 113), color(34, 139, 34)], // Various greens
+    {
+      backgroundStart: color(135, 206, 235),
+      backgroundEnd: color(34, 139, 34),
+      leafColors: [color(60, 179, 113), color(34, 139, 34)],
       leavesVisible: true
     },
-    { // Summer
-      backgroundStart: color(70, 130, 180), // Steel blue
-      backgroundEnd: color(34, 139, 34), // Forest green
-      leafColors: [color(60, 179, 113), color(34, 139, 34), color(46, 139, 87)], // Darker greens
+    {
+      backgroundStart: color(70, 130, 180),
+      backgroundEnd: color(34, 139, 34),
+      leafColors: [color(60, 179, 113), color(34, 139, 34), color(46, 139, 87)],
       leavesVisible: true
     },
-    { // Autumn
-      backgroundStart: color(255, 228, 181), // Light orange
-      backgroundEnd: color(255, 69, 0), // Orange red
+    {
+      backgroundStart: color(255, 228, 181),
+      backgroundEnd: color(255, 69, 0),
       leafColors: [
-        color(255, 69, 0), color(255, 140, 0), color(218, 165, 32), color(205, 92, 92) // Warm autumn colors
+        color(255, 69, 0), color(255, 140, 0), color(218, 165, 32), color(205, 92, 92)
       ],
       leavesVisible: true
     },
-    { // Winter
-      backgroundStart: color(176, 224, 230), // Light sky blue
-      backgroundEnd: color(0, 0, 139), // Dark blue
-      leafColors: [], // No leaves in winter
+    {
+      backgroundStart: color(176, 224, 230),
+      backgroundEnd: color(0, 0, 139),
+      leafColors: [],
       leavesVisible: false,
       quote: "Reflecting on life's cycles - 'The Tree of Life'"
     }
@@ -58,10 +55,8 @@ function setup() {
 }
 
 function draw() {
-  // Update season every few seconds
   if (frameCount % seasonChangeInterval === 0) {
     seasonIndex = (seasonIndex + 1) % seasons.length;
-    // Reset leaf count when season changes
     leafCount = 0;
   }
   
@@ -82,7 +77,7 @@ function draw() {
   fill(0);
   push();
   translate(width / 2, height);
-  branch(i, 0, currentSeason); // Pass current season to branch function
+  branch(i, 0, currentSeason);
   pop();
 
   drawTextOverlay(currentSeason);
@@ -98,47 +93,40 @@ function drawBackgroundGradient(season) {
 }
 
 function branch(len, depth, season) {
-  // Set stroke weight based on the length to make thicker trunk and thinner branches
-  strokeWeight(map(len, 2, i, 3, 19)); // Trunk thickness is 10, thins down to 1
+  strokeWeight(map(len, 2, i, 3, 19));
   stroke(0);
   
-  // Draw the main line of the branch
   line(0, 0, 0, -len * 2);
   translate(0, -len * 2);
 
-  // Check if we are at the "leaf" level and if leaves should be visible in this season
   if (len < 10 && season.leavesVisible) {
-    if (seasonIndex === 2 && frameCount % 5 === 0) { // In autumn, reduce leaf count to simulate falling leaves
+    if (seasonIndex === 2 && frameCount % 5 === 0) {
       if (leafCount < 200) leafCount++;
     }
     
-    if (seasonIndex !== 2 || random(leafCount) > 10) { // Show fewer leaves in autumn
-      // Choose a random color from the current season's leaf colors
+    if (seasonIndex !== 2 || random(leafCount) > 10) {
       fill(random(season.leafColors));
       noStroke(1);
-      ellipse(0, 0, random(10, 15), random(10, 15)); // Random leaf size for natural look
+      ellipse(0, 0, random(10, 15), random(10, 15));
     }
   }
 
-  // Recursively create branches
   if (len > 4 && depth < branchRandomness.length) {
     stroke(0);
     noFill();
     
-    // Left branch with consistent random angle and length scaling
     push();
-    let leftAngle = angle * branchRandomness[depth]; // Asymmetry with consistent randomness
-    let leftScale = 0.66; // Fixed scale factor
+    let leftAngle = angle * branchRandomness[depth];
+    let leftScale = 0.66;
     rotate(leftAngle);
-    branch(len * leftScale, depth + 1, season); // Pass season to recursive call
+    branch(len * leftScale, depth + 1, season);
     pop();
 
-    // Right branch with different consistent random angle and length scaling
     push();
-    let rightAngle = -angle * branchRandomness[depth]; // Asymmetry with consistent randomness
-    let rightScale = 0.76; // Fixed scale factor
+    let rightAngle = -angle * branchRandomness[depth];
+    let rightScale = 0.76;
     rotate(rightAngle);
-    branch(len * rightScale, depth + 1, season); // Pass season to recursive call
+    branch(len * rightScale, depth + 1, season);
     pop();
   }
 }
@@ -146,7 +134,7 @@ function branch(len, depth, season) {
 function generateBranchRandomness(depthLevels) {
   branchRandomness = [];
   for (let i = 0; i < depthLevels; i++) {
-    branchRandomness.push(random(0.8, 1.2)); // Generate consistent randomness
+    branchRandomness.push(random(0.8, 1.2));
   }
 }
 
@@ -162,7 +150,7 @@ function drawTextOverlay(season) {
   textSize(16);
   text("NOTHING STANDS STILL", width / 2, height * 0.25);
 
-  if (seasonIndex === 3 && season.quote) { // Display quote in winter
+  if (seasonIndex === 3 && season.quote) {
     textSize(12);
     fill(200);
     text(season.quote, width / 2, height * 0.35);
