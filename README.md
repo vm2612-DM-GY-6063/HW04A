@@ -14,7 +14,7 @@ This week, I focused on refining the interactive aspects of the project, particu
 
 The interactivity and time-based elements include:
 
-1. **Seasonal Changes**: The tree changes its appearance every 10 seconds to reflect the four seasons:
+1. **Seasonal Changes**: The tree changes its appearance every 5 seconds to reflect the four seasons:
    - **Spring**: Fresh green leaves appear on the branches, symbolizing new growth.
    - **Summer**: Full, lush green foliage covers the branches.
    - **Autumn**: Warm orange and brown colors before they disappear.
