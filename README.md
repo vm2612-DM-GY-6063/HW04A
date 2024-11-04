@@ -5,7 +5,7 @@
 This week, I focused on refining the interactive aspects of the project, particularly the seasonal changes in the tree representation. Key tasks completed include:
 
 - **Seasonal Transition Logic**: Implemented a time-based season-changing mechanism. Every 10 seconds, the tree transitions through Spring, Summer, Autumn, and Winter, symbolizing the cycle of life.
-- **Leaf Behavior by Season**: Adjusted leaf colors, visibility, and behavior depending on the season. In Spring, new green leaves appear; in Summer, the tree is in full bloom; in Autumn, leaves gradually "fall" by reducing their count; in Winter, the tree stands bare, showing only branches.
+- **Leaf Behavior by Season**: Adjusted leaf colors, visibility, and behavior depending on the season. In Spring, new green leaves appear; in Summer, the tree is in full bloom; in Autumn, leaves turn orange; in Winter, the tree stands bare, showing only branches.
 - **Starry Sky Background**: Added a randomized starry sky as the background, with stars that twinkle slightly to add depth and a sense of nature and tranquility.
 - **Interactive Angle Control**: A slider controls the branching angle, allowing users to change the appearance of the tree dynamically.
 - **Recursive Branching and Randomness**: Refined recursive branching to make the tree structure more organic, with slight randomness in each branch to give a more natural, asymmetrical look.
