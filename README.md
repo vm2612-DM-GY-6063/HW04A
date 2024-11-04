@@ -1,3 +1,27 @@
+# Tree of Life Project
+
+## Project Progress - What I’ve Done This Week
+
+This week, I focused on refining the interactive aspects of the project, particularly the seasonal changes in the tree representation. Key tasks completed include:
+
+- **Seasonal Transition Logic**: Implemented a time-based season-changing mechanism. Every 10 seconds, the tree transitions through Spring, Summer, Autumn, and Winter, symbolizing the cycle of life.
+- **Leaf Behavior by Season**: Adjusted leaf colors, visibility, and behavior depending on the season. In Spring, new green leaves appear; in Summer, the tree is in full bloom; in Autumn, leaves gradually "fall" by reducing their count; in Winter, the tree stands bare, showing only branches.
+- **Starry Sky Background**: Added a randomized starry sky as the background, with stars that twinkle slightly to add depth and a sense of nature and tranquility.
+- **Interactive Angle Control**: A slider controls the branching angle, allowing users to change the appearance of the tree dynamically.
+- **Recursive Branching and Randomness**: Refined recursive branching to make the tree structure more organic, with slight randomness in each branch to give a more natural, asymmetrical look.
+
+## Description of the Final Interactivity or Time-Based Logic
+
+The interactivity and time-based elements include:
+
+1. **Seasonal Changes**: The tree changes its appearance every 10 seconds to reflect the four seasons:
+   - **Spring**: Fresh green leaves appear on the branches, symbolizing new growth.
+   - **Summer**: Full, lush green foliage covers the branches.
+   - **Autumn**: Leaves begin to fall off, showing warm orange and brown colors before they disappear.
+   - **Winter**: The tree stands bare, and a reflective quote appears, capturing the theme of cycles and change.
+2. **Slider Control for Branching Angle**: Users can adjust the branching angle with a slider to see how the tree's shape changes in real-time.
+3. **Background Gradient and Starry Sky**: The background gradient dynamically updates with each season, and stars in the sky twinkle randomly to create a night-time effect.
+
 ## Project Update
 
 ### 1. What You’ve Done This Week
