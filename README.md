@@ -17,7 +17,7 @@ The interactivity and time-based elements include:
 1. **Seasonal Changes**: The tree changes its appearance every 10 seconds to reflect the four seasons:
    - **Spring**: Fresh green leaves appear on the branches, symbolizing new growth.
    - **Summer**: Full, lush green foliage covers the branches.
-   - **Autumn**: Leaves begin to fall off, showing warm orange and brown colors before they disappear.
+   - **Autumn**: Warm orange and brown colors before they disappear.
    - **Winter**: The tree stands bare, and a reflective quote appears, capturing the theme of cycles and change.
 2. **Slider Control for Branching Angle**: Users can adjust the branching angle with a slider to see how the tree's shape changes in real-time.
 3. **Background Gradient and Starry Sky**: The background gradient dynamically updates with each season, and stars in the sky twinkle randomly to create a night-time effect.
